@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 8. Print kelipatan 3 dan 5
+    1
+    2
+    3 adalah Kelipatan 3
+    4
+    5 adalah Kelipatan 5
+    6 adalah Kelipatan 3
+    7
+    8
+    9 adalah Kelipatan 3
+    10 adalah Kelipatan 5
+    .
+    .
+    .
+    15 adalah Kelipatan 3 dan 5 -->
+    <br>Soal 8.<br>
+    <script>
+        for (var i = 1; i <= 15; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                document.write(i + " adalah kelipatan 3 dan 5 <br>");
+            } else if (i % 3 == 0) {
+                document.write(i + " adalah kelipatan 3 <br>");
+            } else if (i % 5 == 0) {
+                document.write(i + " adalah kelipatan 5 <br>");
+            } else {
+                document.write(i + "<br>");
+            }
+        }
+    </script>
+
+    <!-- 9. Diketahui sebuah array
+    var jam=["Rolex", "Casio", "Swiss Army", "DW", "Hublot"];
+    OUTPUT :
+    Saya suka jam Rolex, Casio, Swiss Army, DW, dan Hublot. -->
+    <br>Soal 9.<br>
+    <script>
+        var jam = ["Rolex", "Casio", "Swiss Army", "DW", "Hublot"];
+
+        document.write("Saya suka jam ");
+
+        for (var i = 0; i < jam.length; i++) {
+
+            if (i == jam.length - 1) {
+                document.write("dan " + jam[i] + ".");
+            } else {
+                document.write(jam[i] + ", ");
+            }
+        }
+    </script>
+
+
+    <!-- 10. Buat dalam bentuk <ul> dari array berikut
+    var menu = ["Nasi Goreng", "Nasi Uduk", "Nasi Kuning", "Nasi Lemak", "Nasi Padang"];
+    var harga = ["Rp. 10.000","Rp. 15.000","Rp. 20.000","Rp. 25.000","Rp. 30.000"] ;
+    OUTPUT di HTML :
+    - Nasi Goreng harga Rp. 10.000
+    - Nasi Uduk harga Rp. 15.000 -->
+
+    <br><br>Soal 10.<br>
+    
+    <ul>
+    <script>
+        var menu = ["Nasi Goreng", "Nasi Uduk", "Nasi Kuning", "Nasi Lemak", "Nasi Padang"];
+        var harga = ["Rp. 10.000", "Rp. 15.000", "Rp. 20.000", "Rp. 25.000", "Rp. 30.000"];
+
+        for (var i = 0; i < 5; i++) {
+            document.write("<li>" + menu[i] + " harga Rp. " + harga[i] + "</li>")
+        }
+    </script>
+    </ul>
+
+    <!-- 11.Buat persegi dari *
+    OUTPUT:
+    *****
+    *****
+    *****
+    *****
+    *****-->
+
+    <br><br>Soal 11.<br>
+    <script>
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+
+
+    <!-- 12. Bandingkan angka, buat sebuah function
+    function compareNumber(a,b){
+    return hasil;
+    }
+    OUTPUT :
+    -- Test Case --
+    compareNumber(3,3) -> true
+    compareNumber(5,7) -> false-->
+
+    <br>Soal 12.<br>
+    <script>
+        var num1 = 3;
+        var num2 = 3;
+
+        function compareNumber(a, b) {
+            if (a == b) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        document.write("compareNumber(" + num1 + "," + num2 + ") -> " + compareNumber(num1, num2));
+    </script>
+
+    <!--13. Hitung jumlah karakter dalam array
+    var sweets = ["Candy","Cakes","Lollipop"]
+    OUTPUT :
+    Jumlah karakter : 18-->
+    <br><br>Soal 13.<br>
+    <script>
+        var sweets = ["Candy", "Cakes", "Lollipop"]
+        var sum = 0;
+
+        for (var i = 0; i < sweets.length; i++) {
+            sum += sweets[i].length;
+        }
+        document.write("Jumlah karakter : " + sum);
+    </script>
+
+    <!--14. Membalikkan sebuah string
+    var string = "Hello bro!"
+    OUTPUT:
+    !orb olleH -->
+
+    <br><br>Soal 14.<br>
+    <script>
+        var string = "Hello bro!"
+
+        for (var i = string.length - 1; i >= 0; i--) {
+            document.write(string[i])
+        }
+    </script>
+
+    <!-- 15. Buat sebuah function untuk mengubah dari menit menjadi jam
+    var menit = 100
+    OUTPUT :
+    1 Jam 40 Menit -->
+
+    <br><br>Soal 15.<br>
+    <script>
+        var menit = 100;
+
+        function menitKeJam(_menit) {
+            if (_menit < 60) {
+                document.write(_menit + " Menit")
+            } else if (_menit >= 60) {
+                var min = _menit % 60;
+                var hours = (_menit - min) / 60;
+
+                document.write(hours + " Jam " + min + " Menit")
+            }
+        }
+
+        menitKeJam(menit);
+    </script>
+
+
+
+</body>
+
+</html>
